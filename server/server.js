@@ -9,21 +9,42 @@ var app = express();
 
 app.use(bodyParser.json());
 
-app.post('/todos', (req, res)=>{
-  var todo = new Todo({
-    text: req.body.text
+// app.post('/todos', (req, res)=>{
+//   var todo = new Todo({
+//     text: req.body.text
+//   });
+//
+//   todo.save().then((doc)=>{
+//     res.send(doc);
+//   }, e=>{
+//     res.status(400).send(e);
+//   })
+// });
+//
+// app.get('/todos', (req, res) => {
+//   Todo.find().then((todos)=>{
+//     res.send({todos});
+//   }, e => {
+//     res.status(400).send(e);
+//   });
+// });
+
+
+app.post('/users', (req, res)=>{
+  var user = new User({
+    email: req.body.email
   });
 
-  todo.save().then((doc)=>{
+  user.save().then((doc)=>{
     res.send(doc);
   }, e=>{
     res.status(400).send(e);
   })
 });
 
-app.get('/todos', (req, res) => {
-  Todo.find().then((todos)=>{
-    res.send({todos});
+app.get('/users', (req, res) => {
+  User.find().then((user)=>{
+    res.send({user});
   }, e => {
     res.status(400).send(e);
   });
