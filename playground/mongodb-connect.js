@@ -10,16 +10,16 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp' , { useNewUrlParser: tru
 
   var db= client.db('TodoApp')
 
-  // db.collection('Todos').insertOne({
-  //   text: 'Something baby',
-  //   completed: false
-  // }, (err, result)=>{
-  //   if(err){
-  //     return console.log('Unable to insert babe', err);
-  //   }
-  //   console.log(JSON.stringify(result.ops, undefined, 2));
-  //   client.close();
-  // });
+  db.collection('Todos').insertOne({
+    text: 'Something baby',
+    completed: false
+  }, (err, result)=>{
+    if(err){
+      return console.log('Unable to insert babe', err);
+    }
+    console.log(JSON.stringify(result.ops, undefined, 2));
+    client.close();
+  });
   // db.collection('Users').insertOne({
   //   name:'Sean',
   //   age: 24,
@@ -29,7 +29,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp' , { useNewUrlParser: tru
   //     return console.log('ulable to inserttttt', err);
   //   }
   //   console.log(result.ops[0]._id.getTimestamp());
-    client.close();
+  //   client.close();
   // })
 
 });
