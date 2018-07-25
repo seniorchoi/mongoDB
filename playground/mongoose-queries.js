@@ -32,11 +32,11 @@ const {User} = require('./../server/models/user');
 //   console.log(e);
 // })
 
-User.findById('5b58749005f168d1036d6d65').then((user)=>{
-  if(!user){
-    return console.log('unable baby');
-  }
-  console.log(JSON.stringify(user, undefined, 2));
-}, e=>{
-  console.log(e);
-})
+// User.findById('5b58749005f168d1036d6d65').then((user)=>{
+//   if(!user){
+//     return console.log('unable baby');
+//   }
+//   console.log(JSON.stringify(user, undefined, 2));
+// }, e=>{
+//   console.log(e);
+// })
